@@ -12,7 +12,7 @@ package com.euler;
  * numbers from 1 to 20?
  *
  */
-public class Poblem5 {
+public class Problem5 {
 	public static void main(String[] args) {
 
 		for (long i = 1; i < Long.MAX_VALUE; i++) {
