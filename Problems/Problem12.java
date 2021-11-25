@@ -25,19 +25,17 @@ package com.euler;
 public class Problem12 {
 
 	public static void main(String[] args) {
-
-		 System.out.println(largestDivisior());
-
+		long past = System.currentTimeMillis();
+		System.out.println(largestDivisior());
+		System.out.println((System.currentTimeMillis() - past) / 1000.0 + "sec");
 	}
 
 	private static long largestDivisior() {
 		long sum = 0;
-		for (long i = 13100; i < Long.MAX_VALUE; i++) {
-			sum=(i*(i+1))/2;
-			if (!(isPrime(sum)) && isDiversiorEqualTo500(sum) >= 500) {
-				System.out.println(sum);
+		for (long i = 1000; i < Long.MAX_VALUE; i++) {
+			sum = (i * (i + 1)) / 2;
+			if (!(isPrime(sum)) && isDiversiorEqualTo500(sum) >= 500)
 				return sum;
-			}
 		}
 		return sum;
 	}
@@ -45,9 +43,9 @@ public class Problem12 {
 	private static boolean isPrime(long n) {
 		if (n <= 1)
 			return false;
-		if (n <= 3) 
+		if (n <= 3)
 			return true;
-		
+
 		if (n % 2 == 0 || n % 3 == 0)
 			return false;
 		for (int i = 5; i * i <= n; i += 6)
@@ -57,16 +55,20 @@ public class Problem12 {
 		return true;
 	}
 
+	// Finding the divisor
 	private static long isDiversiorEqualTo500(long sum) {
 		if (sum == 1)
 			return 1;
 		long divisorCount = 0;
-		for (long i = 2; i <= sum / 2; i++)
+		int sqr = (int) Math.sqrt(sum);
+		for (long i = 1; i <= sqr; i++)
 			if (sum % i == 0)
-				divisorCount++;
+				divisorCount += 2;
+		if (sqr * sqr == sum) {
+			divisorCount--;
+		}
 
-		System.out.println(sum + " : " + (divisorCount + 2));
-		return divisorCount + 2;
+		return divisorCount;
 	}
 
 }
