@@ -20,8 +20,8 @@ import java.math.BigInteger;
 public class Problem20 {
 
 	public static void main(String[] args) {
-		factorialOfNumber(100);
 
+		factorialOfNumber(100);
 	}
 
 	private static void factorialOfNumber(int num) {

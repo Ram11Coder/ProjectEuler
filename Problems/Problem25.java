@@ -22,13 +22,13 @@ import java.math.BigInteger;
 public class Problem25 {
 
 	public static void main(String[] args) {
+
 		try {
 			fibonacciSeries(1000);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	private static void fibonacciSeries(int i) throws IOException {
@@ -40,8 +40,8 @@ public class Problem25 {
 		while (true) {
 			c = a.add(b);
 			count++;
-			bw.write("Count : " + count + " num : " + c	 + "\n");
-			// System.out.println(c);
+			bw.write("Count : " + count + " num : " + c + "\n");
+
 			if (c.toString().length() >= 1000) {
 				System.out.println(c + " -> " + count);
 				break;

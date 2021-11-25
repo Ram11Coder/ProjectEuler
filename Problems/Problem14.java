@@ -29,16 +29,16 @@ public class Problem14 {
 
 	private static long findLargestSequence(long n) {
 		long maxCount = Long.MIN_VALUE;
-		long num=0;
+		long num = 0;
 		for (long i = 2; i <= n; i++) {
 			long count = collatz_sequence(i);
 			if (maxCount < count) {
 				maxCount = count;
 				num = i;
-				System.out.println("Max Number seq " + num + " Count " + maxCount);
+				//System.out.println("Max Number seq " + num + " Count " + maxCount);
 			}
 		}
-		System.out.println();
+
 		System.out.println("Max Number seq " + num + " Count " + maxCount);
 		return maxCount;
 	}

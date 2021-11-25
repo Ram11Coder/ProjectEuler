@@ -1,7 +1,5 @@
 package com.euler;
 
-import java.math.BigInteger;
-
 /**
  * Highly divisible triangular number
  * 
@@ -27,23 +25,16 @@ import java.math.BigInteger;
 public class Problem12 {
 
 	public static void main(String[] args) {
-		BigInteger bg = new BigInteger("1");
-		for (long i = 2; i <= 500; i++) {
-			BigInteger bi = new BigInteger(i + "");
-			bg = bg.multiply(bi);
-			// System.out.println(bg);
-		}
-		System.out.println(bg);
 
-		// System.out.println(largestDivisior());
+		 System.out.println(largestDivisior());
 
 	}
 
 	private static long largestDivisior() {
 		long sum = 0;
-		for (long i = 1; i < Long.MAX_VALUE; i++) {
-			sum += i;
-			if (isPrime(sum) && isDiversiorEqualTo500(sum) >= 500) {
+		for (long i = 13100; i < Long.MAX_VALUE; i++) {
+			sum=(i*(i+1))/2;
+			if (!(isPrime(sum)) && isDiversiorEqualTo500(sum) >= 500) {
 				System.out.println(sum);
 				return sum;
 			}
@@ -54,9 +45,9 @@ public class Problem12 {
 	private static boolean isPrime(long n) {
 		if (n <= 1)
 			return false;
-		if (n <= 3) {
+		if (n <= 3) 
 			return true;
-		}
+		
 		if (n % 2 == 0 || n % 3 == 0)
 			return false;
 		for (int i = 5; i * i <= n; i += 6)
@@ -66,11 +57,11 @@ public class Problem12 {
 		return true;
 	}
 
-	private static int isDiversiorEqualTo500(long sum) {
+	private static long isDiversiorEqualTo500(long sum) {
 		if (sum == 1)
 			return 1;
-		int divisorCount = 0;
-		for (int i = 2; i <= sum / 2; i++)
+		long divisorCount = 0;
+		for (long i = 2; i <= sum / 2; i++)
 			if (sum % i == 0)
 				divisorCount++;
 
