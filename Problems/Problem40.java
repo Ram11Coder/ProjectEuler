@@ -14,10 +14,28 @@ package com.euler;
  * all 0 to 9 pandigital numbers with this property.
  *
  */
-public class Problem43 {
+public class Problem40 {
 	public static void main(String[] args) {
 		long past = System.currentTimeMillis();
-		
+		StringBuilder sb = new StringBuilder();
+		int i = 1;
+		while (i < Integer.MAX_VALUE) {
+			sb.append(i);
+			if (sb.length() >= 1_000_000)
+				break;
+			i++;
+		}
+
+		/*
+		 * System.out.println(sb.charAt(0) + " " + sb.charAt(9) + " " + sb.charAt(99) +
+		 * " " + sb.charAt(999) + " " + sb.charAt(9_999) + " " + sb.charAt(99_999) + " "
+		 * + sb.charAt(999_999));
+		 */
+		int arr[] = { 0, 9, 99, 999, 9999, 99999, 999999 };
+		int res = 1;
+		for (int j : arr)
+			res *= Integer.parseInt(sb.charAt(j) + "");
+		System.out.println(res);
 
 		System.out.println((System.currentTimeMillis() - past) / 1000.0 + "sec");
 	}
