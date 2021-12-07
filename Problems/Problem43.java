@@ -1,5 +1,8 @@
 package com.euler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The number, 1406357289, is a 0 to 9 pandigital number because it is made up
  * of each of the digits 0 to 9 in some order, but it also has a rather
@@ -15,10 +18,53 @@ package com.euler;
  *
  */
 public class Problem43 {
+	static List<String> list = new ArrayList<String>();
+
+	static long primes[] = { 2, 3, 5, 7, 11, 13, 17 };
+
 	public static void main(String[] args) {
 		long past = System.currentTimeMillis();
-		
+		String num = "1234567890";
+		permutate(num, 0, num.length());
 
+		long maxSum = 0L;
+		for (String s : list)
+			if (checker(s))
+				maxSum += Long.parseLong(s);
+
+		System.out.println("Result : " + maxSum);
 		System.out.println((System.currentTimeMillis() - past) / 1000.0 + "sec");
+	}
+
+	private static boolean checker(String s) {
+		int i = 1;
+		for (Long p : primes) {
+			long n = Long.valueOf(s.substring(i, i + 3));
+			if (!(n % p == 0))
+				return false;
+			i++;
+		}
+		return true;
+	}
+
+	private static void permutate(String num, int l, int len) {
+		if (l == len) {
+			list.add(num);
+			// System.out.println(num);
+		} else {
+			for (int i = l; i < len; i++) {
+				num = swap(num, i, l);
+				permutate(num, l + 1, len);
+				num = swap(num, i, l);
+			}
+		}
+	}
+
+	private static String swap(String num, int i, int l) {
+		char[] arr = num.toCharArray();
+		char c = arr[i];
+		arr[i] = arr[l];
+		arr[l] = c;
+		return String.valueOf(arr);
 	}
 }
