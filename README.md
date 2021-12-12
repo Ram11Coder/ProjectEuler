@@ -45,7 +45,7 @@ Problems| Solutions | Difficulty Level| Status |
 35|[Problem 35](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem35.java)|5%|Solved
 36|[Problem 36](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem36.java)|5%|Solved
 37|[Problem 37](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem37.java)|5%|Solved
-38|[Problem 38](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem38.java)|5%|Not Solved
+38|[Problem 38](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem38.java)|5%|Solved
 39|[Problem 39](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem39.java)|5%|Solved
 40|[Problem 40](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem40.java)|5%|Solved
 41|[Problem 41](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem41.java)|5%|Solved
