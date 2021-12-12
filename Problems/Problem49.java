@@ -18,14 +18,13 @@ import java.util.List;
  */
 public class Problem49 {
 	static List<Integer> list = new ArrayList<Integer>();
-	static List<Integer> propList = new ArrayList<Integer>();
+	static List<Integer> propList = new ArrayList<Integer>();// This list for caching the checked number
 	static int propCount = 1;
 
 	public static void main(String[] args) {
-
+		long past = System.currentTimeMillis();
 		for (int i = 1001; i <= 9999; i += 2) {
-
-			if ((!String.valueOf(i).contains("0")) && isEqualsDigit(i) && (!propList.contains(i))) {
+			if ((!String.valueOf(i).contains("0")) && isEqualsDigit(i) && (propList.indexOf(i) == -1)) {
 				permutate(String.valueOf(i), i, 0, 4);
 				if (arithmeticCheck())
 					propCount++;
@@ -34,18 +33,20 @@ public class Problem49 {
 				list.clear();
 			}
 		}
-		System.out.println(propList);
+		System.out.println((System.currentTimeMillis() - past) / 1000.0 + "sec");
+		// System.out.println(propList);
 	}
 
 	private static boolean arithmeticCheck() {
 		if (list.size() > 3) {
-			Collections.sort(list);
+			// Collections.sort(list);
 			for (int i = 0; i < list.size(); i++) {
 				for (int j = i + 1; j < list.size(); j++) {
 					int diff = list.get(j) - list.get(i);
 					if (diff != 0 && list.indexOf(list.get(j) + diff) != -1) {
 						// System.out.println(list);
-						System.out.println(propCount+": "+list.get(i) + "" + list.get(j) + "" + (list.get(j) + diff));
+						System.out.println(
+								propCount + " : " + list.get(i) + "" + list.get(j) + "" + (list.get(j) + diff));
 						return true;
 					}
 				}
@@ -55,12 +56,11 @@ public class Problem49 {
 	}
 
 	private static void permutate(String n, int num, int i, int len) {
-		if (i == len - 1) {
-			if (isPrime(Integer.valueOf(n)))
-				list.add(Integer.valueOf(n));
-			propList.add(Integer.valueOf(n));
+		if (i == len - 1 && isPrime(Integer.valueOf(n))) {
+			list.add(Integer.valueOf(n));
+			if (propList.indexOf(Integer.valueOf(n)) == -1)
+				propList.add(Integer.valueOf(n));
 		} else {
-
 			for (int j = i; j < len; j++) {
 				n = swap(n, j, i);
 				permutate(n, num, i + 1, len);
@@ -73,10 +73,9 @@ public class Problem49 {
 
 		if (n % 2 == 0 || n % 3 == 0)
 			return false;
-		for (int i = 5; i * i <= n; i += 6) {
+		for (int i = 5; i * i <= n; i += 6)
 			if (n % i == 0 || n % (i + 2) == 0)
 				return false;
-		}
 		return true;
 	}
 
@@ -89,7 +88,6 @@ public class Problem49 {
 	}
 
 	private static boolean isEqualsDigit(int num) {
-		// int n = num % 10 * String.valueOf(num).length(), sum = 0;
 		int hash[] = new int[10];
 		int temp = num;
 		while (num > 0) {
