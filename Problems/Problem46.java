@@ -29,9 +29,7 @@ public class Problem46 {
 		while (num > mul) {
 			if (isPrime(num - mul))
 				return false;
-			i++;
-			mul = 2 * ((int) Math.pow(i, 2));
-
+			mul = 2 * ((int) Math.pow(i++, 2));
 		}
 		return true;
 	}
