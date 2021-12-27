@@ -40,6 +40,12 @@ public class Problem58 {
 				break;
 		}
 		System.out.println(square_count * 2 + 1);//Diagonal side length 
+	int cnt=0;
+	for (int i = 79; i < 1601; i+=2) {
+		if(isPrime(i))
+cnt++;
+	}
+	System.out.println(cnt);
 	}
 
 	private static boolean isPrime(int n) {

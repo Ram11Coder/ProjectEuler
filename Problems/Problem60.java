@@ -1,5 +1,8 @@
 package com.euler;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,60 +23,66 @@ import java.util.Set;
  */
 public class Problem60 {
 	static List<Long> list = new ArrayList<Long>();
+	static List<Long> finallist = new ArrayList<Long>();
 
-	public static void main(String[] args) {
-		for (long i = 3; i <= 30000; i += 2) {
+	public static void main(String[] args) throws IOException {
+		for (long i = 3; i <= 30_000; i += 2)
 			if (isPrime(i))
 				list.add(i);
-		}
-		// System.out.println(list);
-		List<Long> val = new ArrayList<Long>();
-		// Map<Long, StringBuilder> map = new HashMap<Long, StringBuilder>();
-		// Map<Long, List<Long>> map = new HashMap<Long, List<Long>>();
-		loop: for (int i = 0; i < list.size(); i++) {
-			int count = 0;
-			for (int j = i + 1; j < list.size(); j++) {
-				if (concatPrime(list.get(i), list.get(j))) {
-					// System.out.println(list.get(i) + " " + list.get(j));
 
-					if (count == 0)
-						val.add(list.get(i));
-					count++;
-					val.add(list.get(j));
-				}
-				if (count == 4) {
-					if (check(val)) {
-						System.out.println(val);
-						break loop;
-					} else {
-						val.clear();
-						count = 0;
+		System.out.println(list.get(list.size() - 1));
+		/*
+		 * BufferedWriter bw = new BufferedWriter(new
+		 * FileWriter("D:\\daily coding track\\prime_list_new.txt")); bw.write(list +
+		 * "");
+		 */
+
+		System.out.println(list.size());
+		loop: for (int i = 1500; i < list.size(); i++) {
+			for (int j = i + 1; j < list.size(); j++) {
+				if (isPrime(Long.valueOf(list.get(i) + "" + list.get(j)))
+						&& isPrime(Long.valueOf(list.get(j) + "" + list.get(i)))) {
+					if (finallist.size() == 0) {
+						finallist.add(list.get(i));
+						finallist.add(list.get(j));
+					}
+
+					if (finallist.size() > 1 && finalListCheck(list.get(j))) {
+						finallist.add(list.get(j));
 					}
 				}
-			}
-			// map.put(list.get(i), val);
-		}
-
-	}
-
-	private static boolean check(List<Long> val) {
-		for (int i = 0; i < val.size(); i++) {
-			for (int j = i + 1; j < val.size(); j++) {
-				if (!concatPrime(list.get(i), list.get(j))) {
-					return false;
+				if (finallist.size() >= 5) {
+					System.out.println(finallist);
+					break loop;
 				}
-
+				// System.out.println(j + " : " + list.get(j));
 			}
+			System.out.println(finallist);
+			finallist.clear();
 		}
+		System.out.println(finallist);
+
+	}
+
+	private static boolean finalListCheck(long j) {
+		for (Long l : finallist)
+			if (!(isPrime(Long.valueOf(l + "" + j)) && isPrime(Long.valueOf(j + "" + l))))
+				return false;
+
 		return true;
 	}
 
-	private static boolean concatPrime(long num1, long num2) {
-		if (!(isPrime(Long.parseLong(num1 + "" + num2)) && isPrime(Long.parseLong(num1 + "" + num2))))
-			return false;
-		return true;
-	}
-
+	/*
+	 * private static boolean check(List<Long> val) { for (int i = 0; i <
+	 * val.size(); i++) { for (int j = i + 1; j < val.size(); j++) { if
+	 * (!concatPrime(list.get(i), list.get(j))) { return false; }
+	 * 
+	 * } } return true; }
+	 * 
+	 * private static boolean concatPrime(long num1, long num2) { if
+	 * (!(isPrime(Long.parseLong(num1 + "" + num2)) && isPrime(Long.parseLong(num1 +
+	 * "" + num2)))) return false; return true; }
+	 */
 	private static boolean isPrime(long i) {
 		if (i <= 1) {
 			return false;

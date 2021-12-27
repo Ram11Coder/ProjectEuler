@@ -7,7 +7,8 @@ import java.util.List;
 public class Problem27 {
 	static int max = Integer.MIN_VALUE, indexA, indexB;
 	static List<Integer> list = new ArrayList<Integer>();
-
+//We can binary search instead indexOf() and check time complexity
+	
 	static {
 		for (int i = 1; i < 1000; i += 2) {
 			if (isPrime(i))
