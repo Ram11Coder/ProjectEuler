@@ -106,5 +106,5 @@ Problems| Solutions | Difficulty Level| Status |
 96|[Problem 96](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem96.java)||Not Solved
 97|[Problem 97](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem97.java)|5%|Solved
 98|[Problem 98](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem98.java)||Not Solved
-99|[Problem 99](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem99.java)||Not Solved
+99|[Problem 99](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem99.java)||Solved
 100|[Problem 100](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem100.java)||Not Solved
