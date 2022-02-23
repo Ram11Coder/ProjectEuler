@@ -83,7 +83,7 @@ Problems| Solutions | Difficulty Level| Status |
 73|[Problem 73](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem73.java)||Not Solved
 74|[Problem 74](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem74.java)||Not Solved
 75|[Problem 75](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem75.java)||Not Solved
-76|[Problem 76](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem76.java)||Solved
+76|[Problem 76](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem76.java)|10%|Solved
 77|[Problem 77](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem77.java)||Not Solved
 78|[Problem 78](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem78.java)||Not Solved
 79|[Problem 79](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem79.java)||Not Solved
@@ -106,5 +106,5 @@ Problems| Solutions | Difficulty Level| Status |
 96|[Problem 96](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem96.java)||Not Solved
 97|[Problem 97](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem97.java)|5%|Solved
 98|[Problem 98](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem98.java)||Not Solved
-99|[Problem 99](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem99.java)||Solved
+99|[Problem 99](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem99.java)|10%|Solved
 100|[Problem 100](https://github.com/Ram11Coder/ProjectEuler/blob/main/Problems/Problem100.java)||Not Solved
